@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package contract.v1;
+
+message UserOperations {
+    repeated UserOperation operations = 1;
+}
+
+message UserOperation {
+    string sender = 1;
+    string nonce = 2;
+    string init_code = 3;
+    string call_data = 4;
+    string call_gas_limit = 5;
+    string verification_gas_limit = 6;
+    string pre_verification_gas = 7;
+    string max_fee_per_gas = 8;
+    string max_priority_fee_per_gas = 9;
+    string paymaster_and_data = 10;
+    string signature = 11;
+
+    // Extra data
+    string trx_hash = 12;
+    uint64 call_index = 13;
+}
